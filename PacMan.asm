@@ -1,5 +1,4 @@
 ;Abdul-Rehman Naseer    23L-0787
-;Mian Bilal Razzaq      23L-0812
 [org 0x0100]
 jmp welcome_new_game
 
@@ -30,7 +29,6 @@ old_keyboard_segment: dw 0
 ghost_step_counter: db 0
 ; Additional data  for welcome screen
 dev1_name:     db 'Abdul-Rehman Naseer (23L-0787)', 0
-dev2_name:     db 'Mian Bilal Razzaq (23L-0812)', 0
 welcome_msg:   db 'Press any key to start...', 0
 ;--------------------------------------------------------------------
 ; Ghost And PAC-MAN Data Structure
@@ -204,12 +202,6 @@ display_welcome_screen:
     mov dl, 25
     mov si, dev1_name
     mov bl, 0x0A
-    call welcome_print_string_at
-
-    mov dh, 8
-    mov dl, 26
-    mov si, dev2_name
-    mov bl, 0x0B
     call welcome_print_string_at
 
     ; Print start message
